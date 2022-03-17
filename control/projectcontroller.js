@@ -27,7 +27,7 @@ exports.addproject=async (req,res)=>{
 exports.deleteporject=async (req,res)=>{
     let pId=req.params.name;
     try{
-        console.log('controller log'+pId)
+        console.log('controller bola'+pId)
         let result=await projectrepo.deleteproject(pId);
         res.send(result)
 
