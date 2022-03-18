@@ -15,6 +15,7 @@ app.use(cors({
 
 dbconnection.connect()   //connected to database
 
+app.get('/',(req,res)=>{res.send('server is on')})
 
 
 
