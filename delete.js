@@ -9,7 +9,7 @@ mongoclient.connect(url,(err,client)=>{
         db.collection('projects').updateone({_id:100},{$set:{desc:"dude you are gusseing correct"}},(err1,res)=>{
             if(!err1){
                 if(res.modifiedCount>0 && res.matchedCount>0){
-                    console.log('record updated')
+                    console.log('record updated and ready to use')
                 }
 
                 if(res.matchedCount>0){
