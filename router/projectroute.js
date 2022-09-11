@@ -3,7 +3,6 @@ let express=require('express');
 let route=express.Router();
 
 let projectcontroller=require('../control/projectcontroller');
-
 //get 
 route.get('/findproject',projectcontroller.findAllproject);
 //post
