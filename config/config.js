@@ -2,7 +2,9 @@ const mongoclient=require('mongodb').MongoClient;
 
 let url='mongodb+srv://AmazingAsim:AmazingAsim3000@amazingasim.tqrgz.mongodb.net/AmazingAsimportfolio?retryWrites=true&w=majority';
 let dbclient;
-
+let connect=()=>{
+    
+}
 
 //module.exports={connect};
 

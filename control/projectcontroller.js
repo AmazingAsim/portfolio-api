@@ -1,7 +1,6 @@
 let projectrepo=require('../repo/projectrepo');
 
 exports.findAllproject=async (req,res)=>{
-
     let products= await projectrepo.findAllprojects()
     res.json(products)
 };
@@ -9,12 +8,11 @@ exports.findAllproject=async (req,res)=>{
 
 exports.addproject=async (req,res)=>{
     let projectobj=req.body;
-
-    console.log("this is body "+projectobj);
+    console.log(projectobj);
     try{
         let project=await projectrepo.addproject(projectobj);
         if(project.acknowledged){
-            res.send({"res":"'record added smoothly'"})
+            res.send('record added smoothly')
         }
        
     }
