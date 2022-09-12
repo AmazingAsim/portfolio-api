@@ -9,6 +9,7 @@ app.use(cors({
     origin:"*",
     methods:['POST','PUT','PATCH','DELETE']
 }))
+app.use(express.static('views'))
 
 
 
