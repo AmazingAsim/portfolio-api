@@ -20,3 +20,4 @@ exports.connect=()=>{
 exports.getcollection=(name)=>{
     return dbclient.db('portfolio').collection(name);
 }
+console.log('someting here')
