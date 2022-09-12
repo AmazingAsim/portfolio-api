@@ -5,8 +5,6 @@ let projectrouter=require('./router/projectroute')
 let dbconnection=require('./config/config');
 let cors= require('cors');
 app.use(express.json());
-
-dbconnection.connect()   //connected to database
 app.use(cors({
     origin:"*",
     methods:['POST','PUT','PATCH','DELETE']
