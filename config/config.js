@@ -1,10 +1,8 @@
 const mongoclient=require('mongodb').MongoClient;
 
-let url='mongodb://localhost:27017/';
+let url='mongodb+srv://AmazingAsim:AmazingAsim3000@amazingasim.tqrgz.mongodb.net/AmazingAsimportfolio?retryWrites=true&w=majority';
 let dbclient;
-let connect=()=>{
-    
-}
+
 
 //module.exports={connect};
 
@@ -18,6 +16,7 @@ exports.connect=()=>{
 }
 
 exports.getcollection=(name)=>{
-    return dbclient.db('portfolio').collection(name);
+    return dbclient.db('AmazingAsimportfolio').collection(name);
 }
-console.log('someting here')
+
+console.log('someting here ')
