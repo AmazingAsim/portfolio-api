@@ -2,7 +2,7 @@ let express=require('express');
 let app=express();
 let port=process.env.PORT || 5000;
 let projectrouter=require('./router/projectroute')
-let dbconnection=require('./config/config');
+let db=require('./config/config');
 let cors= require('cors');
 app.use(express.json());
 app.use(cors({
@@ -11,6 +11,7 @@ app.use(cors({
 }))
 app.use(express.static('views'))
 
+db.dbconnect()
 
 app.use('/api/project',projectrouter);
 

@@ -1,25 +1,14 @@
-const mongoclient=require('mongodb').MongoClient;
+
 
 let url='mongodb+srv://AmazingAsim:AmazingAsim3000@amazingasim.tqrgz.mongodb.net/AmazingAsimportfolio?retryWrites=true&w=majority';
 
-let dbclient;
+let mongoose=require('mongoose')
+let dbconnect=()=>{
+    return mongoose.connect(url).then((res)=>{
+        console.log("\n mongodb is connected")
+    }).catch(err=>{console.log('error in config'+err)});
 
-
-//module.exports={connect};
-
-exports.connect=()=>{
-    console.log('connect is called')
-    mongoclient.connect(url).then(res=>{
-        console.log('mongo is connected')
-        dbclient=res;
-    }).catch(err=>{
-        console.log('error',err)
-    })
 }
+//bla bla
 
-
-exports.getcollection=(name)=>{
-    return dbclient.db('AmazingAsimportfolio').collection(name);
-}
-
-console.log('someting here ')
+module.exports={dbconnect}

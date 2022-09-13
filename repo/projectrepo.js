@@ -1,22 +1,22 @@
-let dbcollection=require('../config/config');
+let dbcollection=require('../models/projectmodel');
+
 exports.findAllprojects=()=>{
-    let project=dbcollection.getcollection('projects');
-    return project.find().toArray();
+    return dbcollection.find();
 }
 
 exports.addproject=(project)=>{
     console.log(project)
-    return dbcollection.getcollection('projects').insertOne(project)
+    return dbcollection.insertMany([project])
 }
 
 exports.deleteproject=(name)=>{
   
-
-    return dbcollection.getcollection('projects').deleteOne({name:name});
+     console.log("Name is here    :",name)
+    return dbcollection.deleteOne({name:name});
 }
 
 exports.updateproject=(project)=>{
-    return dbcollection.getcollection('project').updateOne({_id:project._id},{$set:{name:project.name,level:project.level,desc:project.desc}});
+    return dbcollection.updateOne({_id:project._id},{$set:{name:project.name,level:project.level,desc:project.desc}});
 }
 
 

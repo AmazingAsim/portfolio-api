@@ -11,10 +11,8 @@ exports.addproject=async (req,res)=>{
     console.log(projectobj);
     try{
         let project=await projectrepo.addproject(projectobj);
-        if(project.acknowledged){
-            res.send('record added smoothly')
-        }
-       
+        res.send({res:'added smoothly'})
+     
     }
     catch(err){
         res.send(err);
