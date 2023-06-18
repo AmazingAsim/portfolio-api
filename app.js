@@ -13,7 +13,7 @@ app.use(express.static('views'))
 
 db.dbconnect()
 
-app.use('/api/project',projectrouter);
+app.use('/api',projectrouter);
 
 
 
