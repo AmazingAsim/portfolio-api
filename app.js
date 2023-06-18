@@ -15,8 +15,6 @@ db.dbconnect()
 
 app.use('/api',projectrouter);
 
-
-
 app.listen(port,()=>{
     console.log('server is mongo mongo');
 })
