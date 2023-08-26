@@ -5,7 +5,7 @@ function take(e) {
     let url = document.getElementById('url').value
     let image = document.getElementById('image').value
 
-    fetch('/api/project/addproject', {
+    fetch(`${location.origin}/api/addproject`, {
         method: "POST",
         mode: 'same-origin',
         headers: {
@@ -41,13 +41,11 @@ function take(e) {
 
 function display() {
 
-    fetch('/api/project/findproject').then((res) => { return res.json() }).then((res) => {
+    fetch(`${location.origin}/api/findproject`).then((res) => { return res.json() }).then((res) => {
         
         for (let project of res) {
             appendfun(project)
         }
-
-
     })
 }
 
@@ -57,7 +55,6 @@ function appendfun(project) {
     let tr = document.createElement('tr');
     tr.innerHTML = ` <td> ${project.name} </td>
                     <td><button onclick="deletethis(this,'${project.name}')">delete</button> </td> `
-
     projectlist.appendChild(tr)
 }
 
@@ -66,7 +63,7 @@ display()
 
 function deletethis(element, name) {
     element.parentElement.parentElement.remove();
-    fetch(`/api/project/deleteproject/${name}`,
+    fetch(`${location.origin}/api/deleteproject/${name}`,
         {
             method: "DELETE",
             mode: 'same-origin',
